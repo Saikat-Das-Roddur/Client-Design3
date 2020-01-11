@@ -1,18 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#29354F"
     tools:context=".MainActivity">
+    <RelativeLayout
+        android:background="#29354F"
+        android:orientation="horizontal"
+        android:id="@+id/toolBarLayout"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="16dp"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/white"
+            android:text="Multiple Accounts"
+            android:textSize="24sp"
+            android:id="@+id/multipleAccnt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:layout_toLeftOf="@+id/blocker"
+            android:src="@drawable/ic_lock_reset_white_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/blocker"
+            android:layout_marginRight="16dp"
+            android:layout_toLeftOf="@+id/options"
+            android:src="@drawable/ic_block_helper_white_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/options"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/ic_dots_vertical_white_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/imageLayout"
+        android:layout_below="@+id/toolBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:scaleType="fitXY"
+            android:src="@drawable/multiple_account"
+            android:layout_width="match_parent"
+            android:layout_height="175dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/textLayout"
+        android:background="#344E81"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_below="@+id/imageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="16dp"
+            android:textColor="@android:color/white"
+            android:text="Share"
+            android:textSize="24sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/imageButtonLayout"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/textLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+
+            android:layout_below="@+id/textLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:foregroundGravity="fill"
+                android:text="1"
+                android:textSize="24dp"
+                android:background="@drawable/triangle"
+                android:textColor="@android:color/white"
+                android:rotation="right"
+                android:layout_width="120dp"
+                android:layout_height="120dp" />
+            <ImageView
+                android:foreground="@drawable/ic_lock_reset_white_24dp"
+                android:layout_margin="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp" />
+        </RelativeLayout>
+
+
+
+        <ImageView
+            android:layout_margin="1dp"
+            android:background="#344E81"
+            android:layout_weight="1"
+            android:src="@drawable/pinterestlogo"
+            android:layout_width="80dp"
+            android:layout_height="120dp" />
+        <ImageView
+            android:layout_margin="1dp"
+            android:background="#344E81"
+            android:layout_weight="1"
+
+            android:src="@drawable/facebooklogo"
+            android:layout_width="80dp"
+            android:layout_height="120dp" />
+    </LinearLayout>
+
+</RelativeLayout>
